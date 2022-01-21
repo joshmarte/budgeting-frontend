@@ -31,10 +31,18 @@ export default function Showdetail() {
 
   return (
     <article>
-      <h3>Date: {transaction.date}</h3>
-      <h5>Name: {transaction.item_name}</h5>
-      <h6>From: {transaction.from}</h6>
-      <p>Category: {transaction.category}</p>
+      <p>
+        <strong>Date:</strong> {transaction.date}
+      </p>
+      <p>
+        <strong>Name:</strong> {transaction.item_name}
+      </p>
+      <p>
+        <strong>From:</strong> {transaction.from}
+      </p>
+      <p>
+        <strong>Category:</strong> {transaction.category}
+      </p>
 
       <div className="showNavigation">
         <div>

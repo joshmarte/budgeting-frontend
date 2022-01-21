@@ -9,6 +9,7 @@ import Querytrans from "./Components/Querytrans";
 import Show from "./Pages/Show";
 import Edittrans from "./Components/Edittrans";
 import Error from "./Pages/Error";
+import Home from "./Pages/Home";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Nav />
       <main>
         <Routes>
+          <Route exact path="/" element={<Home />} />
           <Route path="/transactions" element={<Alltransactions />} />
           <Route path="/transactions/type" element={<Querytrans />} />
           <Route path="/transactions/:index" element={<Show />} />

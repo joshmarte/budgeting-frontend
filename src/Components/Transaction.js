@@ -22,7 +22,7 @@ export default function Transaction({ transaction, index }) {
       </td>
       <td>{dollarUS.format(transaction.amount)}</td>
       <td>
-        <Link to={`/transactions/${index}`}>Edit</Link>
+        <Link to={`/transactions/${index}`}>View</Link>
       </td>
     </tr>
   );

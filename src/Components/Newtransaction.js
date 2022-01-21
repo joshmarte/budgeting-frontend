@@ -8,7 +8,7 @@ export default function Newtransaction() {
   const [transaction, setTransaction] = useState({
     date: "",
     item_name: "",
-    amount: "",
+    amount: 0,
     from: "",
     category: "",
   });
@@ -45,7 +45,14 @@ export default function Newtransaction() {
   };
 
   const handleChange = (event) => {
-    setTransaction({ ...transaction, [event.target.id]: event.target.value });
+    if (event.target.id === "amount") {
+      setTransaction({
+        ...transaction,
+        [event.target.id]: Number(event.target.value),
+      });
+    } else {
+      setTransaction({ ...transaction, [event.target.id]: event.target.value });
+    }
   };
 
   return (
@@ -72,7 +79,7 @@ export default function Newtransaction() {
         <input
           id="amount"
           type="number"
-          value={transaction.amount}
+          value={Number(transaction.amount)}
           onChange={handleChange}
           placeholder="amount..."
           required

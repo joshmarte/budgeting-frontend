@@ -6,6 +6,12 @@ const API = process.env.REACT_APP_API_URL;
 export default function Alltransactions() {
   const [transactions, setTransactions] = useState([]);
 
+  let totalAmount = 0;
+  let dollarUS = Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+
   useEffect(() => {
     try {
       getData();
@@ -20,9 +26,15 @@ export default function Alltransactions() {
     setTransactions(apiData);
   }
 
+  for (let item of transactions) {
+    console.log(typeof item.amount);
+    totalAmount += item.amount;
+    console.log(item.amount);
+  }
+
   return (
     <section className="table">
-      <h2>Bank Account Total:</h2>
+      <h2>Bank Account Total: {dollarUS.format(totalAmount)}</h2>
       <table>
         <tbody>
           {transactions.map((items, index) => {
