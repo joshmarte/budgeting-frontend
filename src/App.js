@@ -6,7 +6,9 @@ import Nav from "./Components/Nav";
 import Newform from "./Pages/Newform";
 import Alltransactions from "./Components/Alltransactions";
 import Querytrans from "./Components/Querytrans";
+import Show from "./Pages/Show";
 import Edittrans from "./Components/Edittrans";
+import Error from "./Pages/Error";
 
 function App() {
   return (
@@ -15,9 +17,11 @@ function App() {
       <main>
         <Routes>
           <Route path="/transactions" element={<Alltransactions />} />
-          <Route path="/transactions/:index" element={<Edittrans />} />
+          <Route path="/transactions/type" element={<Querytrans />} />
+          <Route path="/transactions/:index" element={<Show />} />
+          <Route path="/transactions/:index/edit" element={<Edittrans />} />
           <Route path="/transactions/new" element={<Newform />} />
-          <Route path="/transactions/type/:name" element={<Querytrans />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </main>
     </div>

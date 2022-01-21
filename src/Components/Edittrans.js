@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
@@ -93,6 +93,9 @@ export default function Edittrans() {
         />
         <br />
         <input type="submit" />
+        <button>
+          <Link to={`/transactions/${index}`}>Back</Link>
+        </button>
       </form>
     </div>
   );

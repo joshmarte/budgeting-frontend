@@ -14,7 +14,9 @@ export default function Transaction({ transaction, index }) {
     <tr>
       <td>{newDate}</td>
       <td>
-        <Link to={`/transactions/type/${transaction.item_name.toLowerCase()}`}>
+        <Link
+          to={`/transactions/type?name=${transaction.item_name.toLowerCase()}`}
+        >
           {transaction.item_name}
         </Link>
       </td>

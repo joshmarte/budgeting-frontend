@@ -18,13 +18,14 @@ nav {
   font-size: larger;
 }
 
-nav a:link,
+a:link,
 a:visited {
   text-decoration: none;
   color: dimgray;
 }
 
-nav button {
+button {
   font-size: large;
   border-radius: 2px;
+  color: dimgray;
 }
