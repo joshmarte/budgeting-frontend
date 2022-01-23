@@ -2,6 +2,10 @@
   margin-left: 50px;
 }
 
+h1 {
+  color: dimgray;
+}
+
 .new-transaction form {
   display: flex;
   flex-direction: column;
