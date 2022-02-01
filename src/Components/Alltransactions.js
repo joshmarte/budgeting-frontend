@@ -32,9 +32,14 @@ export default function Alltransactions() {
     // console.log(item.amount);
   }
 
+  let colorAmount =
+    totalAmount > 1000 ? "green" : totalAmount < 0 ? "red" : "dimgray";
+
   return (
     <section className="table">
-      <h2>Bank Account Total: {dollarUS.format(totalAmount)}</h2>
+      <h2 style={{ color: colorAmount }}>
+        Bank Account Total: {dollarUS.format(totalAmount)}
+      </h2>
       <table>
         <tbody>
           {transactions.map((items, index) => {
