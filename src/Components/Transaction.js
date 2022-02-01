@@ -9,6 +9,12 @@ export default function Transaction({ transaction, index }) {
   let options = { month: "long", day: "numeric" };
   let newDate = new Date(transaction.date);
   newDate = newDate.toLocaleDateString("en-US", options);
+  let colorAmount =
+    transaction.amount > 1000
+      ? "green"
+      : transaction.amount < 0
+      ? "red"
+      : "dimgray";
 
   return (
     <tr>
@@ -20,7 +26,9 @@ export default function Transaction({ transaction, index }) {
           {transaction.item_name}
         </Link>
       </td>
-      <td>{dollarUS.format(transaction.amount)}</td>
+      <td style={{ color: colorAmount }}>
+        {dollarUS.format(transaction.amount)}
+      </td>
       <td>
         <Link to={`/transactions/${index}`}>View</Link>
       </td>

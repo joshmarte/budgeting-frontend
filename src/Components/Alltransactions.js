@@ -27,9 +27,9 @@ export default function Alltransactions() {
   }
 
   for (let item of transactions) {
-    console.log(typeof item.amount);
+    // console.log(typeof item.amount);
     totalAmount += item.amount;
-    console.log(item.amount);
+    // console.log(item.amount);
   }
 
   return (
